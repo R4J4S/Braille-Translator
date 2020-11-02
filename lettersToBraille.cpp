@@ -1,13 +1,40 @@
 #include <iostream>
 #include<vector>
+#include<cctype>
 
 #include "lettersToBraille.hpp"
 
 using namespace std;
 
-//returns a vector of strings from given sentence i.e. user's input.
-vector<string> sentenceToWordlist(string sentence)
+//returns a raw braille string, for example: "India is Great" ---> ".india is .great"
+string handlingCapitalLetters(string sentence)
 {
+    string str="";
+    //iterating through the sentence
+    for(int x=0;x<sentence.length();++x)
+    {
+        //check if the character is upper case
+        if(isupper(sentence[x])==true)
+        {   
+            //add "." character and lowercase of character to string str
+            char c = tolower(sentence[x]);
+            str = str + "." + c;
+        }
+        //else add the character directly to string str
+        else
+        {
+            str = str + sentence[x];
+        }
+    }
+    return str;
+
+}
+
+//returns a vector of strings from given sentence i.e. user's input.
+vector<string> sentenceToWordlist(string str)
+{
+    string sentence = handlingCapitalLetters(str);
+
     vector<string> wordlist;
     //iterating through each character of sentence.
     for(auto x:sentence)

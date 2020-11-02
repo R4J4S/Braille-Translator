@@ -7,6 +7,7 @@
 
 extern std::map<char, std::string> letters
 {
+           {'.',"⠠"},//both of the "." are different
            {' '," "},
            {'a', "⠁"},
            {'b', "⠃"},
