@@ -9,8 +9,11 @@ using namespace std;
 int main()
 {
   //prompting and taking input sentence from user.
-  cout<<"SENTENCE"<<endl;
-  string sentence = "rajas is a good boy";
+  cout<<"Given Sentence:"<<endl;
+  string sentence = "Rajas is a GOOD BOY.";
+  cout<<sentence<<endl;
+  
+  cout<<"BRAILLE SENTENCE:"<<endl;
   //cin>>sentence;
 
   //calling function toBraille from letterstoBraille.cpp
