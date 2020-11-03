@@ -3,7 +3,6 @@
 #define LETTERSTOBRAILLE_H
 
 #include <map>
-#include <string>
 
 extern std::map<char, std::string> letters
 {
@@ -35,6 +34,20 @@ extern std::map<char, std::string> letters
            {'x', "⠭"},
            {'y', "⠽"},
            {'z', "⠵"}
+};
+
+extern std::map<char,std::string> numbers
+{
+           {'1', "⠁"},
+           {'2', "⠃"},
+           {'3', "⠉"},
+           {'4', "⠙"},
+           {'5', "⠑"},
+           {'6', "⠋"},
+           {'7', "⠛"},
+           {'8', "⠓"},
+           {'9', "⠊"},
+           {'0', "⠚"}
 };
 
 #endif
