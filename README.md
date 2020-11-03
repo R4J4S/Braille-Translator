@@ -4,8 +4,8 @@ This is a simple program that converts **English** sentences (*alphabets and num
 ## Sample
 **Input** = "I have 2 dogs, pomeranian named "DODO" and labrador named "RIO". Dodo is 9 years old and Rio is 10 months old."
 
-The following **Input** converted to Braille using the program:
 
+The following **Input** converted to Braille using the program:
 **Braille Output** = ⠠⠊ ⠓⠁⠧⠑ ⠼⠃ ⠙⠕⠛⠎, ⠏⠕⠍⠑⠗⠁⠝⠊⠁⠝ ⠝⠁⠍⠑⠙ "⠠⠙⠠⠕⠠⠙⠠⠕" ⠁⠝⠙ ⠇⠁⠃⠗⠁⠙⠕⠗ ⠝⠁⠍⠑⠙ "⠠⠗⠠⠊⠠⠕"⠠ ⠠⠙⠕⠙⠕ ⠊⠎ ⠼⠊ ⠽⠑⠁⠗⠎ ⠕⠇⠙ ⠁⠝⠙ ⠠⠗⠊⠕ ⠊⠎ ⠼⠁⠼⠚ ⠍⠕⠝⠞⠓⠎ ⠕⠇⠙⠠
 
 ## Disclaimer
