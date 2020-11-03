@@ -1,10 +1,38 @@
 #include <iostream>
 #include<vector>
+#include<string>
 #include<cctype>
 
 #include "lettersToBraille.hpp"
 
 using namespace std;
+
+//return a string after converting numbers to braille , for example: "abc234"-->"abc⠼⠙⠼⠉⠼⠃"
+string numberToBraille(string word)
+{
+    string braille_word = "";
+    //iterating through every character of the word.
+    for(int i=0;i<word.length();++i)
+    {
+        //if the character is a number.
+        if(isdigit(word[i]))
+        {
+            //checking if the character is present in lettersToBraille header file.
+            if(numbers.find(word[i]) == numbers.end())
+                continue;
+            else
+            //replacing the character with Number indicator and number's braille substitute.
+                braille_word = braille_word +"⠼"+ numbers.at(word[i]);
+        }
+        else
+        {
+            braille_word = braille_word + word[i];
+        }
+        
+    }
+
+    return braille_word;
+}
 
 //returns a raw braille string, for example: "India is Great" ---> ".india is .great"
 string handlingCapitalLetters(string sentence)
@@ -37,12 +65,13 @@ vector<string> sentenceToWordlist(string str)
 
     vector<string> wordlist;
     //iterating through each character of sentence.
-    for(auto x:sentence)
+    for(int x=0; x < sentence.length();++x)
     {
         string word  = "";
+        string string_of_x = string(1,sentence[x]);
 
         //if character is a space " " then reset word variable.
-        if(x==' ')
+        if(string_of_x ==" ")
         {
             wordlist.push_back(" ");
             word = "";
@@ -50,11 +79,11 @@ vector<string> sentenceToWordlist(string str)
         //else keep on adding characters to word variable.
         else
         {
-            word = word+x;
+            word = word+string_of_x;
         }
-
         //inserting word to the wordlist vector.
         wordlist.push_back(word);
+        
     }
 
     return wordlist;
@@ -69,7 +98,9 @@ string wordToBraille(string word)
     {
         //checking if the character is present in lettersToBraille header file.
         if(letters.find(word[i]) == letters.end())
-            continue;
+        {
+            braille_word = braille_word + word[i];
+        }
         else
         //replacing the character with braille character.
             braille_word = braille_word + letters.at(word[i]);
@@ -89,7 +120,11 @@ string toBraille(string sentence)
     //iterating through every word in wordlist and passing it to the wordToBraille function.
     for(auto x:wordlist)
     {
+        //turning the alphabets to braille.
         string braille_word = wordToBraille(x);
+        //turning words to braille.
+        braille_word = numberToBraille(braille_word);
+        
         //concatinating the braille words to form the resultant braille sentence.
         braille_sentence = braille_sentence + braille_word;
     }
