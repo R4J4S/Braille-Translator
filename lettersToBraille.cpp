@@ -1,13 +1,31 @@
 #include <iostream>
-#include<vector>
-#include<string>
-#include<cctype>
+#include <vector>
+#include <string>
+#include <cctype>
 
 #include "lettersToBraille.hpp"
 
 using namespace std;
 
-//return a string after converting numbers to braille , for example: "abc234"-->"abc⠼⠙⠼⠉⠼⠃"
+//return a string after converting only punctuations to braille , for example: "I'm "rajas""-->"I⠲m  ⠘⠦rajas⠘⠦"
+string punctuationToBraille(string word)
+{
+    string braille_word = "";
+    //iterating through every character of the word.
+    for(int x=0;x<word.length();++x)
+    {
+        //checking if the character is neither an alphbet nor a digit.
+            if(punctuation.find(word[x]) == punctuation.end())
+                braille_word = braille_word + word[x];
+        //replacing the punctuations with their braille substitute.
+            else
+                braille_word = braille_word + punctuation.at(word[x]);
+    }
+
+    return braille_word;
+}
+
+//return a string after converting only numbers to braille , for example: "abc234"-->"abc⠼⠙⠼⠉⠼⠃"
 string numberToBraille(string word)
 {
     string braille_word = "";
@@ -83,7 +101,6 @@ vector<string> sentenceToWordlist(string str)
         }
         //inserting word to the wordlist vector.
         wordlist.push_back(word);
-        
     }
 
     return wordlist;
@@ -120,11 +137,15 @@ string toBraille(string sentence)
     //iterating through every word in wordlist and passing it to the wordToBraille function.
     for(auto x:wordlist)
     {
+        //turning punctuations to braille.
+        string braille_word = punctuationToBraille(x);
+
         //turning the alphabets to braille.
-        string braille_word = wordToBraille(x);
-        //turning words to braille.
+        braille_word = wordToBraille(braille_word);
+
+        //turning numbers to braille.
         braille_word = numberToBraille(braille_word);
-        
+
         //concatinating the braille words to form the resultant braille sentence.
         braille_sentence = braille_sentence + braille_word;
     }
