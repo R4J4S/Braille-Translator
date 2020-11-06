@@ -4,7 +4,7 @@
 
 #include <map>
 
-extern std::map<char, std::string> letters
+std::map<char, std::string> letters
 {
            {'.',"⠠"},//both of the "." are different
            {' '," "},
@@ -36,7 +36,7 @@ extern std::map<char, std::string> letters
            {'z', "⠵"}
 };
 
-extern std::map<char,std::string> numbers
+std::map<char,std::string> numbers
 {
            {'1', "⠁"},
            {'2', "⠃"},
@@ -50,7 +50,7 @@ extern std::map<char,std::string> numbers
            {'0', "⠚"}
 };
 
-extern std::map<char,std::string> punctuation
+std::map<char,std::string> punctuation
 {
                {',', "⠂"},
                {';', "⠆"},
@@ -65,8 +65,6 @@ extern std::map<char,std::string> punctuation
                {'\'', "⠸⠡"},
                {'\'', "⠄⠴"},
                {'-',"⠤"}, //hyphen
-               {'–',"⠠⠤"},//en dash
-               {'—',"⠐⠠⠤"},//em dash
 };
 
 #endif
