@@ -83,7 +83,7 @@ vector<string> sentenceToWordlist(string str)
     string word = "";
     
     vector<string> wordlist;
-    //iterating through each character of sentence
+    //iterating through each character of sentence.
     for(int x=0; x < sentence.length();++x)
     {
         string string_of_x = string(1,sentence[x]);
