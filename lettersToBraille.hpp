@@ -6,7 +6,7 @@
 
 std::map<char, std::string> letters
 {
-           {'.',"⠠"},//both of the "." are different
+           {'.',"⠠"},//both of the "." are different.
            {' '," "},
            {'a', "⠁"},
            {'b', "⠃"},

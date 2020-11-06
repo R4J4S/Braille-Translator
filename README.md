@@ -1,5 +1,5 @@
 # Braille Translator
-This is a simple program that converts **English** sentences to **braille**.
+This is a simple program that converts **English** to **braille**.
 
 ## Sample
 **Input** = "I have 2 dogs. A pomeranian named \"DODO\" and labrador named \"RIO\". Dodo is 9 years old and Rio is 10 months old."
