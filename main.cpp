@@ -14,12 +14,12 @@ int main()
   cout<<sentence<<endl;
   
   cout<<"BRAILLE SENTENCE:"<<endl;
-  //cin>>sentence;
 
   //calling function toBraille from letterstoBraille.cpp
-  string braille_sentence=toBraille(sentence);
+  string braille_sentence = toBraille(sentence);
   cout<<braille_sentence;
 
-  return 0;
+  cin.get();
 
+  return 0;
 }

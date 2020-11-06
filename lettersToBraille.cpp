@@ -80,18 +80,21 @@ string handlingCapitalLetters(string sentence)
 vector<string> sentenceToWordlist(string str)
 {
     string sentence = handlingCapitalLetters(str);
-
+    string word = "";
+    
     vector<string> wordlist;
     //iterating through each character of sentence.
     for(int x=0; x < sentence.length();++x)
     {
-        string word  = "";
         string string_of_x = string(1,sentence[x]);
 
         //if character is a space " " then reset word variable.
         if(string_of_x ==" ")
         {
+            //inserting word to the wordlist vector.
+            wordlist.push_back(word);
             wordlist.push_back(" ");
+            //resetting word.
             word = "";
         }
         //else keep on adding characters to word variable.
@@ -99,8 +102,6 @@ vector<string> sentenceToWordlist(string str)
         {
             word = word+string_of_x;
         }
-        //inserting word to the wordlist vector.
-        wordlist.push_back(word);
     }
 
     return wordlist;
